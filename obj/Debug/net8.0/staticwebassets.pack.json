@@ -1,0 +1,229 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\HomeToHome.bundle.scp.css",
+      "PackagePath": "staticwebassets\\HomeToHome.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\AdminLogin.webp",
+      "PackagePath": "staticwebassets\\images\\AdminLogin.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\AdminPanel.webp",
+      "PackagePath": "staticwebassets\\images\\AdminPanel.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\Contact.jpg",
+      "PackagePath": "staticwebassets\\images\\Contact.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\Contact.webp",
+      "PackagePath": "staticwebassets\\images\\Contact.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\EditRequest.jpeg",
+      "PackagePath": "staticwebassets\\images\\EditRequest.jpeg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\Feedback.jpeg",
+      "PackagePath": "staticwebassets\\images\\Feedback.jpeg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\HomePageImage1.webp",
+      "PackagePath": "staticwebassets\\images\\HomePageImage1.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\HomePageImage2.webp",
+      "PackagePath": "staticwebassets\\images\\HomePageImage2.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\HomePageImage3.webp",
+      "PackagePath": "staticwebassets\\images\\HomePageImage3.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\RequestForm.jpeg",
+      "PackagePath": "staticwebassets\\images\\RequestForm.jpeg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\ReviewRequestPage.webp",
+      "PackagePath": "staticwebassets\\images\\ReviewRequestPage.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\SearchWorker.webp",
+      "PackagePath": "staticwebassets\\images\\SearchWorker.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\ServiceRequest_Image.jpg",
+      "PackagePath": "staticwebassets\\images\\ServiceRequest_Image.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\Team1.jpg",
+      "PackagePath": "staticwebassets\\images\\Team1.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\Team3.jpg",
+      "PackagePath": "staticwebassets\\images\\Team3.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\UserHomePage.webp",
+      "PackagePath": "staticwebassets\\images\\UserHomePage.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\UserProfile.webp",
+      "PackagePath": "staticwebassets\\images\\UserProfile.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\UserRegistrationForm_Image.webp",
+      "PackagePath": "staticwebassets\\images\\UserRegistrationForm_Image.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\ViewContacts.webp",
+      "PackagePath": "staticwebassets\\images\\ViewContacts.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\ViewServiceRequests.webp",
+      "PackagePath": "staticwebassets\\images\\ViewServiceRequests.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\ViewWorker.webp",
+      "PackagePath": "staticwebassets\\images\\ViewWorker.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\WokerRegistrationForm_Image.webp",
+      "PackagePath": "staticwebassets\\images\\WokerRegistrationForm_Image.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\WorkerFeedbackView.jpeg",
+      "PackagePath": "staticwebassets\\images\\WorkerFeedbackView.jpeg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\WorkerHomePage.webp",
+      "PackagePath": "staticwebassets\\images\\WorkerHomePage.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\WorkerProfileForm.jpeg",
+      "PackagePath": "staticwebassets\\images\\WorkerProfileForm.jpeg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\WorkerProfileView.webp",
+      "PackagePath": "staticwebassets\\images\\WorkerProfileView.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\ac-service.jpg",
+      "PackagePath": "staticwebassets\\images\\ac-service.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\appliance-repair.jpg",
+      "PackagePath": "staticwebassets\\images\\appliance-repair.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\carpentry.jpg",
+      "PackagePath": "staticwebassets\\images\\carpentry.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\cctv.jpg",
+      "PackagePath": "staticwebassets\\images\\cctv.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\cleaning.jpg",
+      "PackagePath": "staticwebassets\\images\\cleaning.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\cooking.jpg",
+      "PackagePath": "staticwebassets\\images\\cooking.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\electrical.jpg",
+      "PackagePath": "staticwebassets\\images\\electrical.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\furniture-assembly.jpg",
+      "PackagePath": "staticwebassets\\images\\furniture-assembly.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\home.jpg",
+      "PackagePath": "staticwebassets\\images\\home.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\interior-design.jpg",
+      "PackagePath": "staticwebassets\\images\\interior-design.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\laundry.jpg",
+      "PackagePath": "staticwebassets\\images\\laundry.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\lawn.jpg",
+      "PackagePath": "staticwebassets\\images\\lawn.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\login1.webp",
+      "PackagePath": "staticwebassets\\images\\login1.webp"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\movers.jpg",
+      "PackagePath": "staticwebassets\\images\\movers.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\painting.jpg",
+      "PackagePath": "staticwebassets\\images\\painting.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\pest-control.jpg",
+      "PackagePath": "staticwebassets\\images\\pest-control.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\plumbing.jpg",
+      "PackagePath": "staticwebassets\\images\\plumbing.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\security.jpg",
+      "PackagePath": "staticwebassets\\images\\security.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\images\\team2.jpg",
+      "PackagePath": "staticwebassets\\images\\team2.jpg"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "E:\\fourth semester\\VP Lab\\HomeToHome\\HomeToHome\\HomeToHome\\wwwroot\\javascript\\JavaScript.js",
+      "PackagePath": "staticwebassets\\javascript\\JavaScript.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HomeToHome.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.HomeToHome.props",
+      "PackagePath": "build\\HomeToHome.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.HomeToHome.props",
+      "PackagePath": "buildMultiTargeting\\HomeToHome.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.HomeToHome.props",
+      "PackagePath": "buildTransitive\\HomeToHome.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
