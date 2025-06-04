@@ -1,0 +1,260 @@
+﻿@page "/ourservices"
+
+<div class="services-section">
+    <h2 class="section-title">__ Our Services __</h2>
+    <div class="service-cards">
+        @foreach (var service in services)
+        {
+            <div class="card">
+                <img src="@service.ImageUrl" alt="@service.Title" />
+                <h5>@service.Title</h5>
+                <p>@service.Description</p>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private List<ServiceItem> services = new()
+    {
+        new ServiceItem {
+            Title = "Cleaning Service",
+            Description = "Experience the joy of a spotless home with our eco-friendly cleaning services.",
+            ImageUrl = "images/cleaning.jpg"
+        },
+        new ServiceItem {
+            Title = "Expert Plumbing Solutions",
+            Description = "Don’t let plumbing issues disrupt your home. Our certified plumbers are here to help.",
+            ImageUrl = "images/plumbing.jpg"
+        },
+        new ServiceItem {
+            Title = "Professional Lawn Care Service",
+            Description = "Transform your outdoor space with our expert lawn care team.",
+            ImageUrl = "images/lawn.jpg"
+        },
+        new ServiceItem {
+            Title = "Painting Service",
+            Description = "Give your home a fresh new look with our professional painting services.",
+            ImageUrl = "images/painting.jpg"
+        },
+        new ServiceItem {
+            Title = "Comprehensive Home Security",
+            Description = "Secure your home with modern surveillance and security installations.",
+            ImageUrl = "images/security.jpg"
+        },
+        new ServiceItem {
+            Title = "Electrical Repairs",
+            Description = "Certified electricians available for wiring, appliance installation, and power issues.",
+            ImageUrl = "images/electrical.jpg"
+        },
+        new ServiceItem {
+            Title = "Home Appliance Repair",
+            Description = "Repair and maintenance services for refrigerators, washing machines, ovens, and more.",
+            ImageUrl = "images/appliance-repair.jpg"
+        },
+        new ServiceItem {
+            Title = "AC Installation & Service",
+            Description = "Beat the heat with our expert air conditioning installation and servicing solutions.",
+            ImageUrl = "images/ac-service.jpg"
+        },
+        new ServiceItem {
+            Title = "Furniture Assembly",
+            Description = "Let our professionals handle the hassle of assembling your furniture correctly and safely.",
+            ImageUrl = "images/furniture-assembly.jpg"
+        },
+        new ServiceItem {
+            Title = "Carpentry Services",
+            Description = "From custom woodwork to repairs, our carpenters deliver top-notch craftsmanship.",
+            ImageUrl = "images/carpentry.jpg"
+        },
+        new ServiceItem {
+            Title = "Pest Control",
+            Description = "Effective and eco-friendly pest control to protect your home from unwanted invaders.",
+            ImageUrl = "images/pest-control.jpg"
+        },
+
+        new ServiceItem {
+            Title = "CCTV Installation",
+            Description = "Enhance your home security with professional CCTV camera setup and monitoring systems.",
+            ImageUrl = "images/cctv.jpg"
+        },
+
+        new ServiceItem {
+            Title = "Cooking Service",
+            Description = "Home cooks available to prepare fresh, healthy meals tailored to your taste.",
+            ImageUrl = "images/cooking.jpg"
+        },
+        new ServiceItem {
+            Title = "Laundry & Ironing",
+            Description = "Let us handle your laundry needs with convenient pickup and doorstep delivery.",
+            ImageUrl = "images/laundry.jpg"
+        },
+        new ServiceItem {
+            Title = "Home Relocation & Movers",
+            Description = "Safe and professional packing and moving services to make relocation stress-free.",
+            ImageUrl = "images/movers.jpg"
+        },
+       new ServiceItem {
+        Title = "Interior Design Consultation",
+        Description = "Get expert advice and design plans to transform your space beautifully and practically.",
+        ImageUrl = "images/interior-design.jpg"
+}
+
+
+    };
+
+    public class ServiceItem
+    {
+        public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = string.Empty;
+    }
+}
+
+<style>
+    .services-section {
+        text-align: center;
+        padding: 4rem 1rem;
+        background-image: url('images/services-bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+        z-index: 1;
+    }
+
+    .services-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(217, 172, 128, 0.50); /* Semi-transparent white overlay */
+        z-index: -1;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        color: #222;
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #e67e22;
+        margin: 0.5rem auto 0;
+        border-radius: 2px;
+    }
+
+    .service-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        max-width: 1400px;
+        margin: auto;
+    }
+
+    .card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        padding: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+        transform: scale(1.05);
+    }
+
+    .card h5 {
+        margin-top: 1.2rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #2c3e50;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+        color: #666;
+        margin: 0.8rem 0 1.5rem 0;
+        line-height: 1.5;
+    }
+
+    .book-link {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: #e67e22;
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border: 2px solid #e67e22;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .book-link:hover {
+        background: #e67e22;
+        color: #fff;
+        border-color: transparent;
+    }
+
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .service-cards {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            padding: 1rem;
+        }
+
+        .card img {
+            height: 160px;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .services-section {
+            padding: 2rem 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+        }
+
+        .card h5 {
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+        }
+    }
+</style>

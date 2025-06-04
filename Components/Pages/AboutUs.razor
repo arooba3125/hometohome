@@ -1,0 +1,667 @@
+﻿@page "/about"
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Components
+@using Microsoft.AspNetCore.Components.Web
+
+<style>
+    :root {
+        --primary-color: #000000; /* Black */
+        --accent-color: #ffffff; /* White */
+        --secondary-color: #4b5563; /* Medium gray */
+        --text-color: #1f2937; /* Dark gray */
+        --bg-light: #f9fafb; /* Light gray */
+        --bg-lighter: #fefefe; /* Slightly lighter gray for Story */
+        --bg-lightest: #f3f4f6; /* Even lighter gray for Mission */
+        --bg-dark: #111827; /* Dark gray */
+        --accent-pink: #ff6f61; /* Inspired by the image's pinkish tone */
+    }
+
+    .about-page {
+        font-family: 'Poppins', 'Segoe UI', sans-serif;
+        color: var(--text-color);
+        line-height: 1.7;
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+    }
+
+    /* Section Base Styling */
+    .section {
+        padding: 4rem 2rem;
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeInUp 0.8s ease forwards;
+        border-bottom: 1px solid #e5e7eb;
+        position: relative; /* For separator positioning */
+    }
+
+    .section:nth-child(1) { animation-delay: 0s; }
+    .section:nth-child(2) { animation-delay: 0.3s; }
+    .section:nth-child(3) { animation-delay: 0.6s; }
+    .section:nth-child(4) { animation-delay: 0.9s; }
+    .section:nth-child(5) { animation-delay: 1.2s; }
+    .section:nth-child(6) { animation-delay: 1.5s; }
+    .section:nth-child(7) { animation-delay: 1.8s; }
+    .section:nth-child(8) { animation-delay: 2.1s; }
+
+    @@keyframes fadeInUp {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Separator Styling */
+    .section:not(:last-child)::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: var(--accent-pink);
+        margin: 2rem auto;
+        border-radius: 2px;
+        opacity: 0;
+        animation: fadeIn 0.8s ease forwards;
+        animation-delay: 0.5s;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        background: linear-gradient(145deg, var(--accent-pink) 0%, var(--bg-light) 100%);
+        padding: 6rem 2rem;
+        text-align: left;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        border-bottom: none;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        animation: slideIn 1s ease-out;
+    }
+
+    .hero-section p.lead {
+        font-size: 1.3rem;
+        max-width: 600px;
+        margin: 1.5rem 0;
+        color: var(--text-color);
+        animation: fadeIn 1.2s ease-out 0.2s forwards;
+        opacity: 0;
+    }
+
+    .hero-section .btn-primary {
+        background: var(--accent-pink);
+        color: var(--accent-color);
+        border: none;
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hero-section .btn-primary:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        background: #ff5a4a;
+    }
+
+    /* Mission Section */
+    .mission-section {
+        background: var(--bg-lightest);
+        text-align: center;
+    }
+
+    .mission-section .card {
+        background: var(--accent-color);
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 2rem;
+    }
+
+    .mission-section .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .mission-section .card-img-top {
+        height: 150px;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .mission-section .card-body {
+        padding: 2rem;
+    }
+
+    .mission-section .card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    .mission-section .card-text {
+        color: var(--text-color);
+    }
+
+    .mission-section .btn-link {
+        color: var(--accent-pink);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .mission-section .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .mission-details {
+        margin-top: 3rem;
+    }
+
+    .mission-details ul.list-unstyled {
+        display: inline-block;
+        text-align: left;
+        max-width: 600px;
+    }
+
+    .mission-details ul.list-unstyled li {
+        position: relative;
+        padding-left: 2.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.15rem;
+        color: var(--text-color);
+        transition: transform 0.3s ease;
+    }
+
+    .mission-details ul.list-unstyled li:hover {
+        transform: translateX(10px);
+    }
+
+    .mission-details ul.list-unstyled li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--primary-color);
+        font-size: 1.3rem;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+    }
+
+    .mission-details ul.list-unstyled li:hover::before {
+        transform: scale(1.2);
+    }
+
+    .mission-details p.fs-5.text-center {
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Story Section */
+    .story-section {
+        background: var(--bg-lighter);
+        padding: 4rem 2rem;
+    }
+
+    .story-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+
+    .story-section p {
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Team Section */
+    .team-section {
+        background: var(--bg-light);
+    }
+
+    .team-section .card {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        background: var(--accent-color);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .team-section .card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .team-section .card-img-top {
+        height: 350px;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.4s ease;
+    }
+
+    .team-section .card:hover .card-img-top {
+        transform: scale(1.08);
+    }
+
+    .team-section .card-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    /* Call to Action Section */
+    .cta-section {
+        background: var(--accent-pink);
+        color: var(--accent-color);
+        text-align: center;
+    }
+
+    .cta-section .btn-primary {
+        background: var(--accent-color);
+        color: var(--accent-pink);
+        border: 2px solid var(--accent-color);
+        padding: 0.8rem 2rem;
+        border-radius: 50px;
+    }
+
+    .cta-section .btn-primary:hover {
+        background: #e5e5e5;
+        color: var(--accent-pink);
+    }
+
+    /* Achievements Section */
+    .achievements-section {
+        background: var(--bg-dark);
+        color: var(--accent-color);
+    }
+
+    .achievements-section h3 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+
+    .achievements-section p {
+        font-size: 1.1rem;
+        color: #d1d5db;
+    }
+
+    .achievements-section .col-md-3 {
+        transition: transform 0.3s ease;
+    }
+
+    .achievements-section .col-md-3:hover {
+        transform: scale(1.1);
+    }
+
+    .achievements-section .achievement-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+    }
+
+    /* Blog/News Section */
+    .blog-section {
+        background: var(--bg-light);
+    }
+
+    .blog-section .card {
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .blog-section .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .blog-section .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .blog-section .card-body {
+        padding: 1.5rem;
+    }
+
+    .blog-section .card-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    /* Footer */
+    .footer {
+        background: var(--bg-dark);
+        color: var(--accent-color);
+        padding: 3rem 2rem;
+        text-align: left;
+    }
+
+    .footer a {
+        color: var(--accent-pink);
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+
+    .footer .form-control {
+        background: #2d3748;
+        border: none;
+        color: var(--accent-color);
+        border-radius: 5px;
+    }
+
+    .footer .btn {
+        background: var(--accent-pink);
+        color: var(--accent-color);
+        border: none;
+    }
+
+    /* Animations */
+    @@keyframes slideIn {
+        from { opacity: 0; transform: translateX(-20px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    @@keyframes fadeIn {
+        to { opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @@media (max-width: 768px) {
+        .hero-section h1 { font-size: 2.5rem; }
+        .hero-section p.lead { font-size: 1rem; }
+        .section { padding: 3rem 1rem; }
+        .blog-section .card-img-top { height: 150px; }
+        .team-section .card-img-top { height: 280px; }
+        .achievements-section h3 { font-size: 2rem; }
+        .story-section .row { flex-direction: column-reverse; }
+    }
+
+    @@media (max-width: 576px) {
+        .hero-section { padding: 4rem 1rem; }
+        .blog-section .card-img-top { height: 120px; }
+        .team-section .card-img-top { height: 220px; }
+        .achievements-section .col-md-3 { margin-bottom: 2rem; }
+        .footer .col-md-3 { margin-bottom: 2rem; }
+    }
+</style>
+
+<div class="about-page">
+    <!-- Hero Section -->
+    <section class="hero-section section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold">Welcome to HomeToHome</h1>
+                    <p class="lead mt-3">
+                        Your trusted destination for seamless, on-demand home services.
+                    </p>
+                    <p class="fs-5 mt-4">
+                        From quick repairs to major renovations, we connect you with verified professionals who care.
+                    </p>
+                    <button class="btn btn-primary mt-4"
+                            @onclick="HandleExploreServicesClick"
+                            aria-label="Explore HomeToHome Services">
+                        Explore Services
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section mission-section">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Our Approach</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Our Approach" />
+                        <div class="card-body">
+                            <h5 class="card-title">Our Approach</h5>
+                            <p class="card-text">
+                                We connect homeowners with trusted professionals effortlessly through advanced technology.
+                            </p>
+                            <a href="#" class="btn-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/2150522257/photo/businessman-holding-and-showing-the-best-quality-assurance-with-five-stars-iso-certification.jpg?s=612x612&w=0&k=20&c=3jwWjI0C1Qn6zIVwb4xNLuqxOk5LI84IkOpcUP18KIQ=" class="card-img-top" alt="Our Experience" />
+                        <div class="card-body">
+                            <h5 class="card-title">Our Experience</h5>
+                            <p class="card-text">
+                                With years of expertise, we ensure quality service and customer satisfaction every time.
+                            </p>
+                            <a href="#" class="btn-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://media.istockphoto.com/id/1412621642/vector/customer-feedback-user-experience-or-client-satisfaction-opinion-for-product-and-services.jpg?s=612x612&w=0&k=20&c=5FJpkXmxYj3S6dhEn65cab_v876zSHmVT-0Ba-SH97k=" class="card-img-top" alt="Our Clients" />
+                        <div class="card-body">
+                            <h5 class="card-title">Our Clients</h5>
+                            <p class="card-text">
+                                Serving thousands of happy customers across multiple cities with transparency and trust.
+                            </p>
+                            <a href="#" class="btn-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mission-details">
+                <h2 class="fw-bold text-center mt-5">Our Mission</h2>
+                <p class="mt-3 fs-5">
+                    At <strong>HomeToHome</strong>, we’re transforming home services with <strong>accessibility, transparency, and reliability</strong>. Your home deserves the best, and we make it happen.
+                </p>
+                <ul class="list-unstyled fs-5 mt-4">
+                    <li>Connect homeowners with trusted professionals effortlessly.</li>
+                    <li>Ensure trust with rigorous vetting and quality checks.</li>
+                    <li>Empower local talent with fair opportunities.</li>
+                    <li>Use advanced technology for seamless bookings.</li>
+                    <li>Deliver exceptional customer satisfaction every time.</li>
+                </ul>
+                <p class="fs-5 mt-4 text-center">
+                    We’re building a <strong>community of trust</strong>, one home at a time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="section story-section">
+        <div class="container">
+            <h2 class="fw-bold text-center">Our Story</h2>
+            <div class="row mt-5 align-items-center">
+                <div class="col-md-6">
+                    <p class="fs-5">
+                        It began with a question: <strong>“Why is reliable home help so hard to find?”</strong>
+                    </p>
+                    <p class="fs-5 mt-3">
+                        Frustrated by inconsistent services, our founders created HomeToHome to connect homeowners with verified professionals. From plumbing to cleaning, we simplify home care.
+                    </p>
+                    <p class="fs-5 mt-3">
+                        Starting locally, we’ve grown into a trusted platform, serving thousands with transparent pricing and quality service. Our mission is to rebuild trust in home services.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <img src="/images/home.jpg" alt="Our Story" class="img-fluid rounded shadow" aria-hidden="true" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team-section">
+        <div class="container">
+            <h2 class="text-center fw-bold">Meet Our Team</h2>
+            <div class="row text-center mt-5">
+                @foreach (var member in TeamMembers)
+                {
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="card h-100" role="article" aria-labelledby="@($"name-{member.Name.Replace(" ", "-").ToLower()}")">
+                            <img src="@member.ImageUrl" class="card-img-top" alt="@member.Name" />
+                            <div class="card-body">
+                                <h5 class="card-title" id="@($"name-{member.Name.Replace(" ", "-").ToLower()}")">@member.Name</h5>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/News Section -->
+    <section class="section blog-section">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Latest Insights</h2>
+            <div class="row">
+                @foreach (var post in BlogPosts)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="@post.ImageUrl" class="card-img-top" alt="@post.Title" />
+                            <div class="card-body">
+                                <h5 class="card-title">@post.Title</h5>
+                                <p class="card-text">@post.Summary</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section achievements-section">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Our Achievements</h2>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="achievement-card">
+                        <img src="https://t3.ftcdn.net/jpg/13/63/02/60/360_F_1363026048_Xa284DtzmRoyC2i3KNgxB7SQllTq7oQk.jpg" alt="Happy Customers" class="img-fluid mb-3" />
+                        <h3>10,000+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="achievement-card">
+                        <img src="https://www.shutterstock.com/image-photo/online-customer-satisfaction-survey-service-600nw-2480519563.jpg" alt="Satisfaction Rate" class="img-fluid mb-3" />
+                        <h3>98%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="achievement-card">
+                        <img src="https://t3.ftcdn.net/jpg/02/94/15/72/360_F_294157250_Lr3WgRMPp4Gse2PP8I1h5QeITZL0Zt1k.jpg" alt="Verified Providers" class="img-fluid mb-3" />
+                        <h3>500+</h3>
+                        <p>Verified Providers</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="achievement-card"> 
+                        <img src="https://t4.ftcdn.net/jpg/01/34/25/15/360_F_134251559_Kiq7uliJiXSFUZAM6upX7rdJWL5Z52jF.jpg" alt="Growing Cities" class="img-fluid mb-3" />
+                        <h3>5 Cities</h3>
+                        <p>Growing Fast</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2 class="fw-bold">Join the Movement</h2>
+            <p class="fs-5 mt-3">
+                Passionate about revolutionizing home services? Let’s build the future together.
+            </p>
+            <NavLink href="/contact" class="btn btn-primary mt-4" aria-label="Contact HomeToHome">Connect with Us</NavLink>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>About Us</h5>
+                    <p>We connect homeowners with trusted professionals for seamless home services.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Info</h5>
+                    <p>Air University, Islamabad, Pakistan</p>
+                    <p>Email: info@hometohome.com</p>
+                    <p>Phone: +92 3105539727</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Newsletter</h5>
+                    <input type="email" class="form-control mb-2" placeholder="Your Email Address" aria-label="Email Address" />
+                    <button class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>© 2025 HomeToHome. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+@code {
+    public class TeamMember
+    {
+        public string Name { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = string.Empty;
+    }
+
+    public class BlogPost
+    {
+        public string Title { get; set; } = string.Empty;
+        public string Summary { get; set; } = string.Empty;
+        public string ImageUrl { get; set; } = string.Empty;
+    }
+
+    private List<TeamMember> TeamMembers = new()
+    {
+        new TeamMember { Name = "Arooba Shehzadi", ImageUrl = "/images/team1.jpg" },
+        new TeamMember { Name = "Afia Aziz", ImageUrl = "/images/team2.jpg" },
+        new TeamMember { Name = "Zumer Dhillun", ImageUrl = "/images/team3.jpg" }
+    };
+
+    private List<BlogPost> BlogPosts = new()
+    {
+        new BlogPost { Title = "Strategic Home Solutions", Summary = "Learn how we simplify home repairs with technology.", ImageUrl = "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" },
+        new BlogPost { Title = "Company Updates", Summary = "Our latest achievements and expansions.", ImageUrl = "https://media.istockphoto.com/id/1145315560/photo/update-with-woman-using-a-laptop.jpg?s=612x612&w=0&k=20&c=S7z34mdGwzh3gjK-08sfzwCvyMVqTVy0hvcyV_i--kI=" },
+        new BlogPost { Title = "Build an Effective Strategy", Summary = "Tips for maintaining your home with ease.", ImageUrl = "https://media.istockphoto.com/id/1339953021/photo/business-strategy-for-marketing-and-management.jpg?s=612x612&w=0&k=20&c=2srQpyzZAIv5YBlIkCitYxOKYIQZjia5ZCp3pqsdVtM=" }
+    };
+
+    [Inject]
+    private NavigationManager Navigation { get; set; } = default!;
+
+    private void HandleExploreServicesClick()
+    {
+        Navigation.NavigateTo("/ourservices");
+    }
+}
